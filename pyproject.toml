@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ncei-ghcn-data"
+version = "0.1.0"
+description = "Python wrapper to access NCEI's Global Historical Climatology Network daily data API."
+authors = ["Loren Snow <lorendsnow@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ncei_ghcn_data"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
