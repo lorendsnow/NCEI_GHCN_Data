@@ -1,1 +1,1 @@
-from daily_summaries import DailySummaries  # noqa
+from .daily_summaries import DailySummaries  # noqa

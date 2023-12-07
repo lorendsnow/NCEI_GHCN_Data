@@ -14,7 +14,7 @@ class ResponseError(Exception):
 @dataclass
 class DailySummary:
     date: datetime.date = None
-    station: str = None
+    station_id: str = None
     avg_temp: int = None
     min_temp: int = None
     max_temp: int = None
@@ -36,7 +36,9 @@ class DailySummary:
     dust: bool = False
     smoke: bool = False
     blowing_snow: bool = False
+    tornado: bool = False
     high_wind: bool = False
+    blowing_spray: bool = False
     mist: bool = False
     drizzle: bool = False
     freezing_drizzle: bool = False
@@ -49,6 +51,8 @@ class DailySummary:
     avg_wind: float = None
     fog_in_area: bool = False
     thunder_in_area: bool = False
+    ash_or_dust_in_area: bool = False
+    snow_or_ice_crystals_in_area: bool = False
     rain_or_snow_in_area: bool = False
     time_fastest_mile_or_fastest_1_minute_wind: datetime.time = None
     peak_gust_time: datetime.time = None
@@ -73,7 +77,7 @@ class DailySummary:
 
 class ConversionEnum(Enum):
     DATE = "date"
-    STATION = "station"
+    STATION = "station_id"
     TAVG = "avg_temp"
     TMIN = "min_temp"
     TMAX = "max_temp"
@@ -95,7 +99,9 @@ class ConversionEnum(Enum):
     WT07 = "dust"
     WT08 = "smoke"
     WT09 = "blowing_snow"
+    WT10 = "tornado"
     WT11 = "high_wind"
+    WT12 = "blowing spray"
     WT13 = "mist"
     WT14 = "drizzle"
     WT15 = "freezing_drizzle"
@@ -107,6 +113,8 @@ class ConversionEnum(Enum):
     WT22 = "ice_fog"
     WV01 = "fog_in_area"
     WV03 = "thunder_in_area"
+    WV07 = "ash_or_dust_in_area"
+    WV18 = "snow_or_ice_crystals_in_area"
     WV20 = "rain_or_snow_in_area"
     AWND = "avg_wind"
     FMTM = "time_fastest_mile_or_fastest_1_minute_wind"
